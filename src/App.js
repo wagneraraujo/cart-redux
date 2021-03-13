@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/home";
 import FinalChekout from "./pages/finalizar";
+import AddProduto from "./pages/add";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/finalizar" component={FinalChekout} />
+              <Route exact path="/add-produto" component={AddProduto} />
             </Switch>
           </Row>
         </Container>
