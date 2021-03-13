@@ -1,6 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { addProduto } from "../../store/produtos";
+import { showMessage, hideMessage } from "../../store/layout";
 import { useDispatch } from "react-redux";
 const AddProduto = () => {
   const [form, setForm] = useState({
@@ -19,8 +20,13 @@ const AddProduto = () => {
   function onSubmit(e) {
     e.preventDefault();
     dispatch(addProduto(form));
+    dispatch(showMessage());
+
+    setTimeout(() => {
+      dispatch(hideMessage());
+    }, 3000);
     //usar o dispatch para conectar essa action
-    console.log(form);
+    setForm({ id: "", name: "", price: "", image: "" });
   }
 
   return (

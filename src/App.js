@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/home";
 import FinalChekout from "./pages/finalizar";
 import AddProduto from "./pages/add";
-
+import MessageCart from "./components/Messages";
 function App() {
   return (
     <>
       <Router>
         <Header />
+        <MessageCart />
         <Container>
           <Row className="mt-3">
             <Switch>
